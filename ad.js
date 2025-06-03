@@ -975,10 +975,10 @@ function parseTranslate(data, 样式 = true) {
 	data = data.replace(/(^|[^A-Za-z])(MASTER OF WH*?I*?SPE*?R*?S*?)(?=[^A-Za-z]|$)/gi, "$1唤言大师")
 	if (样式) {
 		data = data.replace(/^WTBUY|^WTB/gi, "<span style=\"color:#0000FF;font-weight:900\">买</span>")
-		data = data.replace(/^WTSELL|^WTS/gi, "<span style=\"color:#BB00BB;font-weight:900\">卖</span>")
+		data = data.replace(/^WTS.*$|^WTSELL.*$/gim, "");
 	} else {
 		data = data.replace(/^WTBUY|^WTB/gi, "买")
-		data = data.replace(/^WTSELL|^WTS/gi, "卖")
+		data = data.replace(/^WTS.*$|^WTSELL.*$/gim, "");
 	}
 	data = data.replace(/(^|[^A-Za-z])(PRIMEVAL(?: ARO*?MOU*?R)*? REMN*?A*?N*?T*?S*?)(?=[^A-Za-z]|$)/gi, "$1太古防具零料")
 	data = data.replace(/(^|[^A-Za-z])(DELDRIMORE*?(?: ARO*?MOU*?R)*? REMN*?A*?N*?T*?S*?)(?=[^A-Za-z]|$)/gi, "$1戴尔狄摩防具零料")
