@@ -904,7 +904,9 @@ function inputValHelper(data) {
 
 function parseTranslate(data, 样式 = true) {
 	data = data.replace(/^\s*?\r*?\n*?$/gi, "")
-
+	
+        data = data.replace(/^.*?Sàlê.*?$/gim, "")
+	
 	if (translateButton.classList.contains("字母版")) {
 		if (样式) {
 			data = data.replace(/^WTBUY|^WTB/gi, "<span style=\"color:#0000FF;\">WTB</span>")
